@@ -1,9 +1,10 @@
 import * as React from 'react'
-import './app.scss'
+import './app.sass'
+import Header from '../Header/Header'
 
 const App = () => {
   return (
-    <div>Hello</div>
+    <Header/>
   )
 }
 
