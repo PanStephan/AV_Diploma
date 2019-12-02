@@ -1,6 +1,7 @@
 import * as React from 'react'
 import './regularBtn.sass'
 
+
 interface IPropRegularBtn {
   text: string,
   href?: string,

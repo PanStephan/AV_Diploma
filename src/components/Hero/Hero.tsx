@@ -3,7 +3,6 @@ import './hero.sass'
 import * as img from '../../logo/Beans_logo.svg'
 import RegularBtn from '../Buttons/RegularBtn/RegularBtn'
 
-
 const Hero = (): JSX.Element => (
   <div className="row">
     <div className="col-lg-10 offset-lg-1">

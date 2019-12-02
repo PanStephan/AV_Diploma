@@ -2,7 +2,6 @@ import * as React from 'react'
 import './navigaton.sass'
 import * as img from '../../logo/Logo.svg'
 
-
 const Navigaton = (): JSX.Element =>  {
   return (
     <div className="row">
