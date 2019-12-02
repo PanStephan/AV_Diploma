@@ -2,7 +2,7 @@ import * as React from 'react'
 import './navigaton.sass'
 import * as img from '../../logo/Logo.svg'
 
-const Navigaton = (): JSX.Element =>  {
+const Navigation = (): JSX.Element =>  {
   return (
     <div className="row">
         <div className="col-lg-6">
@@ -26,4 +26,4 @@ const Navigaton = (): JSX.Element =>  {
   )
 }
 
-export default Navigaton
+export default Navigation

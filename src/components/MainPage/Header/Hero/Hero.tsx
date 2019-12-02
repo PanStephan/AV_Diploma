@@ -1,7 +1,7 @@
 import * as React from 'react'
 import './hero.sass'
-import * as img from '../../logo/Beans_logo.svg'
-import RegularBtn from '../Buttons/RegularBtn/RegularBtn'
+import * as img from '../../../../logo/Beans_logo.svg'
+import RegularBtn from '../../../Buttons/RegularBtn/RegularBtn'
 
 const Hero = (): JSX.Element => (
   <div className="row">

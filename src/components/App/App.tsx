@@ -1,10 +1,10 @@
 import * as React from 'react'
 import './app.sass'
-import Header from '../Header/Header'
+import MainPage from '../MainPage'
 
 const App = () => {
   return (
-    <Header/>
+    <MainPage/>
   )
 }
 

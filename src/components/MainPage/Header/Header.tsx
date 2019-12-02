@@ -1,16 +1,16 @@
 import * as React from 'react'
 import './header.sass'
-import Navigaton from '../Navigaton/Navigaton'
-import Hero from '../Hero/Hero'
+import Navigation from '../../Navigation/Navigation'
+import Hero from './Hero/Hero'
 
 
 const Header = (): JSX.Element => (
-  <header className="preview">
+  <div className="preview">
     <div className="container">
-      <Navigaton/>
+      <Navigation/>
       <Hero/>
     </div>
-  </header>
+  </div>
 )
 
 export default Header
