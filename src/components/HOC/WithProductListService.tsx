@@ -1,12 +1,12 @@
 import * as React from 'react';
 import ProductListContext from '../ProductListContext/ProductListContext';
 
-const WithProductListService = () => (Wrapper) => {
-  return (props) => {
+const WithProductListService = (): Function => (Wrapper): Function => {
+  return (props: any): JSX.Element => {
     return (
       <ProductListContext.Consumer>
         {
-          (ProductListService) => {
+          (ProductListService): JSX.Element => {
             return <Wrapper {...props} ProductListService={ProductListService}/>
           }
         }

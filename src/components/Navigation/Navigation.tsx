@@ -1,28 +1,31 @@
 import * as React from 'react'
 import './navigaton.sass'
-import * as img from '../../logo/Logo.svg'
+import {NavLink} from 'react-router-dom'
 
-const Navigation = (): JSX.Element =>  {
+interface IPropNavigation {
+    img?: string,
+    color?: string
+}
+
+const Navigation = (props:IPropNavigation): JSX.Element =>  {
+    const{img, color} = props
+    let colorClass = 'navigation-link'
+    if(color === 'white') colorClass += ' navigation-link--white' 
+    if(color === 'black') colorClass += ' navigation-link--black' 
   return (
-    <div className="row">
-        <div className="col-lg-6">
-            <header>
-                <ul className="header">
-                    <li className="header__item">
-                        <a href="#">
-                          <img src={img} alt="logo"/>
-                        </a>
-                    </li>
-                    <li className="header__item">
-                        <a href="#">Our coffee</a>
-                    </li>
-                    <li className="header__item">
-                        <a href="#">For your pleasure</a>
-                    </li>
-                </ul>
-            </header>
-        </div>
-    </div>
+    <>
+        <li className="navigation__item">
+            <NavLink to='/'>
+                <img src={img} alt="logo"/>
+            </NavLink>
+        </li>
+        <li className="navigation__item">
+            <NavLink to='/about' className={colorClass}>Our coffee</NavLink>
+        </li>
+        <li className="navigation__item">
+            {/* <NavLink to='/#'  className={colorClass}>For your pleasure</NavLink> */}
+        </li>
+    </>
   )
 }
 
