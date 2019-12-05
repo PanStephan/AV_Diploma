@@ -31,8 +31,8 @@ class List extends React.Component<IPropList> {
     const{coffee, filterValue} = this.props
     if(filterValue === null) return coffee
     return coffee.filter(el => {
-      return el.name.toLowerCase().indexOf(filterValue.value) > -1 
-      || el.country.toLowerCase().indexOf(filterValue.value.toLowerCase()) > -1
+      return el.name.toLowerCase().indexOf(filterValue) > -1 
+      || el.country.toLowerCase().indexOf(filterValue.toLowerCase()) > -1
     })
 
   }
