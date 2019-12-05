@@ -1,14 +1,33 @@
 import * as React from 'react'
 import RegularInput from '../../../Inputs/RegularInput/RegularInput'
+import {productFilter} from '../../../../actions'
+import {connect} from 'react-redux'
 
-const SearchForm = (): JSX.Element => (
-  <div className="col-lg-4 offset-2">
-    <form action="#" className="shop__search">
-      <label className="shop__search-label">Looking for</label>
-      <RegularInput type="text" placeholder="start typing here..." className="shop__search-input"/>
-      {/* <input id="filter" type="text" placeholder="start typing here..." className="shop__search-input"/> */}
-    </form>
-  </div>
-)
+interface IPropSearchFrom {
+  productFilter(prop : object): void
+}
 
-export default SearchForm
+class SearchForm extends React.Component<IPropSearchFrom> {
+
+  onInputChange = (event) => {
+    this.props.productFilter(event.target.value)
+  }
+  
+  render() {
+    return (
+      <div className="col-lg-4 offset-2">
+        <form action="#" className="shop__search">
+          <label className="shop__search-label">Looking for</label>
+          <RegularInput onChange={this.onInputChange} type="text" placeholder="start typing here..." className="shop__search-input"/>
+        </form>
+      </div>
+    )
+  }
+  
+}
+
+const mapDispatchToProps = {
+  productFilter
+}
+
+export default connect(null, mapDispatchToProps)(SearchForm)

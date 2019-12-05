@@ -1,11 +1,13 @@
 interface IPropState {
   productList: Array<any>,
-  loading: boolean
+  loading: boolean,
+  filterValue: string
 }
 
 const initialState:IPropState = {
   productList: [],
-  loading: true
+  loading: true,
+  filterValue: null
 }
 
 const reducer = (state = initialState, action) => {
@@ -20,6 +22,11 @@ const reducer = (state = initialState, action) => {
     case 'PRODUCT_REQ':
       return {
         ...state,
+      }
+    case 'PRODUCT_FILTER': 
+      return {
+        ...state,
+        filterValue: payload
       }
     default: 
       return state

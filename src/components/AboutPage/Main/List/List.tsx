@@ -13,26 +13,41 @@ interface IPropList {
   productListLoaded(res?: object): object
   productListReq(): object,
   coffee: any,
-  loading: boolean
+  loading: boolean,
+  filterValue: any
 }
 
 class List extends React.Component<IPropList> {
+
   componentDidMount() {
     const{ProductListService, productListLoaded, productListReq} =  this.props
     productListReq()
     ProductListService.getProductList()
-      .then(res => productListLoaded(res))
-      // .catch(menuErr) 
+    .then(res => productListLoaded(res))
+    // .catch(menuErr) 
   }
+
+  filterPosts = () => {
+    const{coffee, filterValue} = this.props
+    if(filterValue === null) return coffee
+    return coffee.filter(el => {
+      return el.name.toLowerCase().indexOf(filterValue.value) > -1 
+      || el.country.toLowerCase().indexOf(filterValue.value.toLowerCase()) > -1
+    })
+
+  }
+
   render() {
     const{coffee, loading} = this.props
+    const filteredData = this.filterPosts()
+    if(!coffee) return null
      return (
       <> 
         {loading ? <Loader className={'center'}/> : <SearchPanel labelBtn={coffee}/>}
         <div className="row">
           <div className="col-lg-10 offset-lg-1">
             <div className="shop__wrapper">
-              {loading ? <Loader className={'center'}/> : <ListItem coffee={coffee}/>}
+              {loading ? <Loader className={'center'}/> : <ListItem coffee={filteredData}/>}
             </div>
           </div>
         </div>
@@ -42,10 +57,11 @@ class List extends React.Component<IPropList> {
 
 }
 
-const mapStateToProps = ({productList, loading}) => {
+const mapStateToProps = ({productList, loading, filterValue}) => {
   return {
     coffee: productList.coffee,
-    loading
+    loading,
+    filterValue
   }
 }
 
