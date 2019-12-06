@@ -3,7 +3,7 @@ import Main from './Main/Main'
 import Header from './Header/Header'
 import RegularFooter from '../RegularFooter/RegularFooter'
 
-const MainPage = (): JSX.Element => (
+const ForYourPleasurePage: React.FC = () => (
   <>
     <Header/>
     <Main/>
@@ -11,4 +11,4 @@ const MainPage = (): JSX.Element => (
   </>  
 )
 
-export default MainPage
+export default ForYourPleasurePage

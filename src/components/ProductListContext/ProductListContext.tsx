@@ -1,10 +1,6 @@
 import * as React from 'react'
 
-interface IContextProps {
-  state: null;
-  dispatch: ({type}:{type:string}) => void;
-}
 
-const RestoServiceContext = React.createContext()
+const RestoServiceContext = React.createContext(null)
 
 export default RestoServiceContext

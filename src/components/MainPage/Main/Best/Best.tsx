@@ -1,7 +1,7 @@
 import * as React from 'react'
 import './best.sass'
 import BestItem from './BestItem/BestItem'
-import ProductListContext from '../../../HOC/WithProductListService'
+import WithProductListService from '../../../HOC/WithProductListService'
 import {productListLoaded, productListReq} from '../../../../actions'
 import {connect} from 'react-redux'
 import Loader from '../../../Loader/Loader'
@@ -55,4 +55,4 @@ const mapDispatchToProps = {
   productListReq
 }
 
-export default ProductListContext()(connect(mapStateToProps, mapDispatchToProps)(Best))
+export default WithProductListService()(connect(mapStateToProps, mapDispatchToProps)(Best))

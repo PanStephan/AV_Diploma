@@ -11,7 +11,15 @@ const productListReq = () => {
   }
 }
 
+const productFilter = (value) => {
+  return {
+    type: 'PRODUCT_FILTER',
+    payload: value
+  }
+}
+
 export {
   productListLoaded,
-  productListReq
+  productListReq,
+  productFilter
 }

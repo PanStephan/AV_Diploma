@@ -1,9 +1,9 @@
 import * as React from 'react'
-import Main from './Main/Main'
 import Header from './Header/Header'
+import Main from './Main/Main'
 import RegularFooter from '../RegularFooter/RegularFooter'
 
-const MainPage = (): JSX.Element => (
+const AboutPage = (): JSX.Element => (
   <>
     <Header/>
     <Main/>
@@ -11,4 +11,4 @@ const MainPage = (): JSX.Element => (
   </>  
 )
 
-export default MainPage
+export default AboutPage
