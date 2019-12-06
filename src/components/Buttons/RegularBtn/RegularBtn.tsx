@@ -5,13 +5,14 @@ import './regularBtn.sass'
 interface IPropRegularBtn {
   text: string,
   href?: string,
-  className: string
+  className: string,
+  onClick(props: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void
 }
 
 const RegularBtn = (props : IPropRegularBtn): JSX.Element => {
-  const{text, href, className} = props
+  const{text, href, className, onClick} = props
   return (
-    <a className={className} href={href}>{text}</a>  
+    <a onClick={onClick} className={className} href={href}>{text}</a>  
   ) 
 }
 

@@ -5,6 +5,7 @@ import App from './components/App/App'
 import {Provider} from 'react-redux'
 import ProductListService from './services/productListService'
 import store from './store'
+import {BrowserRouter as Router} from 'react-router-dom'
 import ProductListContext from './components/ProductListContext/ProductListContext'
 
 const productListService = new ProductListService()
@@ -12,7 +13,9 @@ const productListService = new ProductListService()
 ReactDOM.render(
   <Provider store={store}>
     <ProductListContext.Provider value={productListService}>
-      <App/> 
+      <Router>
+        <App/> 
+      </Router>
     </ProductListContext.Provider>
   </Provider>
   ,document.getElementById('app'))
