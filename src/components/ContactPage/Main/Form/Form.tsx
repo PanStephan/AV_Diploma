@@ -51,7 +51,7 @@ const Form: React.FC = () => {
       readySubmit: false,
       value: ''
     }, 
-    submit: false
+    submit: true
   })
 
   const onSubmitForm = (e) => {
