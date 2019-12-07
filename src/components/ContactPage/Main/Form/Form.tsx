@@ -6,9 +6,32 @@ import axios from 'axios'
 import SuccessSubmit from './SuccessSubmit/SuccessSubmit'
 
 
+interface IPropState {
+  name: {
+    validation: boolean,
+    readySubmit: boolean,
+    value: string
+  },
+  phone: {
+    validation: boolean,
+    value: string
+  },
+  mail: {
+    validation: boolean,
+    readySubmit: boolean,
+    value: string
+  },
+  textarea: {
+    validation: boolean,
+    readySubmit: boolean,
+    value: string
+  }
+  submit: boolean,
+}
+
 const Form: React.FC = () => {  
   
-  const [formState, setFormState] = React.useState({
+  const [formState, setFormState] = React.useState<IPropState>({
     name: {
       validation: true,
       readySubmit: false,
