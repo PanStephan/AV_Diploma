@@ -1,10 +1,10 @@
 import * as React from 'react'
 import './app.sass'
-import MainPage from '../MainPage'
+import MainPage from '../Pages/MainPage'
 import {Route, Switch} from 'react-router-dom'
-import AboutPage from '../AboutPage'
-import ForYourPleasurePage from '../ForYourPleasurePage'
-import ContactPage from '../ContactPage'
+import AboutPage from '../Pages/AboutPage'
+import ForYourPleasurePage from '../Pages/ForYourPleasurePage'
+import ContactPage from '../Pages/ContactPage'
 
 
 const App = (): JSX.Element => {

@@ -6,6 +6,10 @@ const cors = require('cors')
 const app = express()
 const bodyParser = require('body-parser')
 
+const generateId = () => {
+  return `f${(~~(Math.random()*1e8)).toString(16)}`;
+}
+
 app.use(express.static(path.join(__dirname, '../../dist')));
 app.use(cors());
 app.use(bodyParser.json())
@@ -24,9 +28,18 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/db', (req, res) => {
+  console.log()
+  json.bestsellers.map(el => {
+    el.id =  generateId()
+  })
+  json.coffee.map(el => {
+    el.id =  generateId()
+  })
+  json.goods.map(el => {
+    el.id =  generateId()
+  })
   res.json(json);
 });
-
 
 const rawParser = bodyParser.raw({type: '*/*'});
 app.post('/api/db', rawParser, (req, res) => {
