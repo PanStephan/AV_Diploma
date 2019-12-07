@@ -1,0 +1,49 @@
+.pleasure-form 
+  width: 370px
+  margin-top: 15px
+  display: flex
+  align-items: center
+  flex-direction: column
+
+.pleasure-form__warning 
+  display: none
+  color: red
+  &--active
+    display: block
+
+.pleasure-form__wrapper 
+  display: flex
+  justify-content: space-between
+  margin-top: 15px
+  margin-bottom: 15px
+  width: inherit
+
+.pleasure-form__label
+  font-size: 18px
+  color: #000000
+  &:after
+    content: '*'
+    color: red
+  &--non-require
+    font-size: 18px
+    color: #000000
+  &--block    
+    display: block
+    margin-top: 15px
+
+.pleasure-form__textarea
+  margin-top: 30px
+  margin-bottom: 40px
+  width: 350px
+  height: 120px
+  background: #FFFFFF
+  border: 1px solid rgba(0, 0, 0, 0.49)
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25)
+  border-radius: 4px
+  padding-left: 5px
+  padding-top: 10px
+  
+
+@media(max-width: 500px)
+  .pleasure-form 
+    width: 300px

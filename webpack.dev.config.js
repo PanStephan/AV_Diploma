@@ -15,7 +15,7 @@ module.exports = {
     ignored: /node_modules/
   },
   devServer: {
-    port: 9090,
+    port: 8080,
     historyApiFallback: true,
     proxy: {
       '/api/db': {

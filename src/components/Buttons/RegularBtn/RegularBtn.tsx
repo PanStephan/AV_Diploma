@@ -1,12 +1,10 @@
 import * as React from 'react'
-import './regularBtn.sass'
-
 
 interface IPropRegularBtn {
   text: string,
   href?: string,
   className: string,
-  onClick(props: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void
+  onClick?(props: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void
 }
 
 const RegularBtn = (props : IPropRegularBtn): JSX.Element => {
