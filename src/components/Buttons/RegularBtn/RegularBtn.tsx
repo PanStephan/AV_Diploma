@@ -4,7 +4,7 @@ interface IPropRegularBtn {
   text: string,
   href?: string,
   className: string,
-  onClick?(props: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void
+  onClick?(props: any): void
 }
 
 const RegularBtn = (props : IPropRegularBtn): JSX.Element => {

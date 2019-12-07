@@ -159,7 +159,7 @@ const Form: React.FC = () => {
 
   const warningActive = 'pleasure-form__warning pleasure-form__warning--active'
 
-  return submit ? <SuccessSubmit changeSubmit={submit}/> :
+  return submit ? <SuccessSubmit onClick={() => setFormState({...formState, submit: false})}/> :
     <form className='pleasure-form' onSubmit={onSubmitForm}>
       <div className={name.validation ? 'pleasure-form__warning' : warningActive}>check correctness name field</div>
       <div className="pleasure-form__wrapper">
