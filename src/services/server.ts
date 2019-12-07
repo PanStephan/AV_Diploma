@@ -1,11 +1,15 @@
-const express = require('express');
-const path = require('path');
+const express = require('express')
+const path = require('path')
 const json = require('./db.json')
 const fs = require('fs')
-const app = express();
+const cors = require('cors')
+const app = express()
+const bodyParser = require('body-parser')
 
 app.use(express.static(path.join(__dirname, '../../dist')));
-
+app.use(cors());
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(async (req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
@@ -23,10 +27,12 @@ app.get('/api/db', (req, res) => {
   res.json(json);
 });
 
-app.post('/api/db', (req, res) => {
-  console.log(req)
-  console.log(res)
-  res.json(json);
+
+const rawParser = bodyParser.raw({type: '*/*'});
+app.post('/api/db', rawParser, (req, res) => {
+  const data = req.body
+  json.contacts.push(data)
+  res.json(json)
 });
 
 const port = process.env.PORT || 5050;

@@ -64,9 +64,11 @@ const Form: React.FC = () => {
       {phone: phone.value}
     ]
     axios.post('/api/db', data)
+    .then(res => console.log(res))
     .catch((error) => {
       console.log(error);
     });
+    axios.get('/api/db').then(res => console.log(res))
     setFormState({...formState,
     name: {
       validation: true,
@@ -87,7 +89,7 @@ const Form: React.FC = () => {
       readySubmit: false,
       value: ''
     },
-    submit: true})
+    submit: false})
   }
 
   const onInputChange = (e, type = 'name') => {
@@ -161,7 +163,7 @@ const Form: React.FC = () => {
 
   return submit ? <SuccessSubmit/> :
     <form className='pleasure-form' onSubmit={onSubmitForm}>
-      <div className={name.validation ? 'pleasure-form__warning' : warningActive}>check correctness phone field</div>
+      <div className={name.validation ? 'pleasure-form__warning' : warningActive}>check correctness name field</div>
       <div className="pleasure-form__wrapper">
         <label className='pleasure-form__label'>Name</label>
         <RegularInput onChange={onInputChange.bind(this)} value={name.value} />

@@ -7,7 +7,6 @@ import ListItem from './ListItem/ListItem'
 import './list.sass'
 import SearchPanel from '../../SearchPanel/SearchPanel'
 
-
 interface IPropList {
   ProductListService: any,
   productListLoaded(res?: object): object
