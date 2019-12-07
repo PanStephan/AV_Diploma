@@ -5,7 +5,6 @@ import SubmitBtn from '../../../Buttons/SubmitBtn/SubmitBtn'
 import axios from 'axios'
 import SuccessSubmit from './SuccessSubmit/SuccessSubmit'
 
-
 interface IPropState {
   name: {
     validation: boolean,
@@ -51,7 +50,7 @@ const Form: React.FC = () => {
       readySubmit: false,
       value: ''
     }, 
-    submit: true
+    submit: false
   })
 
   const onSubmitForm = (e) => {
@@ -68,28 +67,27 @@ const Form: React.FC = () => {
     .catch((error) => {
       console.log(error);
     });
-    axios.get('/api/db').then(res => console.log(res))
     setFormState({...formState,
-    name: {
-      validation: true,
-      readySubmit: false,
-      value: ''
-    },
-    phone: {
-      validation: true,
-      value: ''
-    },
-    textarea: {
-      validation: true,
-      readySubmit: false,
-      value: ''
-    },
-    mail: {
-      validation: true,
-      readySubmit: false,
-      value: ''
-    },
-    submit: false})
+      name: {
+        validation: true,
+        readySubmit: false,
+        value: ''
+      },
+      phone: {
+        validation: true,
+        value: ''
+      },
+      textarea: {
+        validation: true,
+        readySubmit: false,
+        value: ''
+      },
+      mail: {
+        validation: true,
+        readySubmit: false,
+        value: ''
+      },
+      submit: true})
   }
 
   const onInputChange = (e, type = 'name') => {
@@ -161,7 +159,7 @@ const Form: React.FC = () => {
 
   const warningActive = 'pleasure-form__warning pleasure-form__warning--active'
 
-  return submit ? <SuccessSubmit/> :
+  return submit ? <SuccessSubmit changeSubmit={submit}/> :
     <form className='pleasure-form' onSubmit={onSubmitForm}>
       <div className={name.validation ? 'pleasure-form__warning' : warningActive}>check correctness name field</div>
       <div className="pleasure-form__wrapper">
