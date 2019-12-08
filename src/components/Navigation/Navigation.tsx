@@ -23,7 +23,7 @@ const Navigation = (props:IPropNavigation): JSX.Element =>  {
             <NavLink to='/about' className={colorClass}>Our coffee</NavLink>
         </li>
         <li className="navigation__item">
-            {/* <NavLink to='/#'  className={colorClass}>For your pleasure</NavLink> */}
+            <NavLink to='/for_pleasure'  className={colorClass}>For your pleasure</NavLink>
         </li>
     </>
   )
