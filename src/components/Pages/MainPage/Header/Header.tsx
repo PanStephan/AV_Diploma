@@ -12,7 +12,7 @@ const Header = (): JSX.Element => (
         <img className="beanslogo" src={img} alt="Beans logo"/>
         <div className="preview__subtitle">We makes every day full of energy and taste</div>
         <div className="preview__subtitle">Want to try our beans?</div>
-        <Link to='/about' className='preview__btn'>More</Link>
+        <Link to='/about/' className='preview__btn'>More</Link>
     </div>
   </div>
 )
