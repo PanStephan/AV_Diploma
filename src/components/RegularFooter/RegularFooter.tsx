@@ -8,7 +8,7 @@ const RegularFooter = (): JSX.Element => (
   <footer>
     <div className="container">
         <div className="row">
-          <div className="col-lg-5 offset-lg-4">
+          <div className="offset-lg-4">
             <ul className="footer">
               <Navigation color={'black'} img={logoBlack}/>
             </ul>

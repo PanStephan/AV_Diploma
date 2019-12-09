@@ -5,13 +5,14 @@ interface IPropInput {
   type?: string,
   placeholder?: string,
   className?: string ,
+  value?: string,
   onChange(event: React.ChangeEvent): void
 }
 
 const RegularInput = (props: IPropInput): JSX.Element => {
-  const{type, placeholder, className, onChange} = props
+  const{type, placeholder, className, onChange, value} = props
   return (
-    <input onChange={onChange} type={type || 'text'} placeholder={placeholder || ''} className={className+' input' || 'input'}></input>
+    <input value={value} onChange={onChange} type={type || 'text'} placeholder={placeholder || ''} className={className+' input' || 'input'}></input>
   )
 }
 
