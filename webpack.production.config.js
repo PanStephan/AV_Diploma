@@ -51,7 +51,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'images/[name].[ext]',
+              name: 'img/[name].[ext]',
             }
           },
         ],
@@ -71,6 +71,6 @@ module.exports = {
       filename: 'styles.css',
     }),
     new MinifyPlugin(),
-    new HtmlWebpackPlugin({ filename: `index.html`, template: 'src/views/index.html', favicon: 'src/img/favicon.png'})
+    new HtmlWebpackPlugin({ filename: `index.html`, template: 'src/views/index.html'})
   ]
 }

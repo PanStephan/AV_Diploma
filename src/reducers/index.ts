@@ -28,11 +28,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         filterValue: payload
       }
-    case 'GET_SEPARATE_COFFEE_ITEM':
-      return {
-        ...state,
-        itemId: payload
-      }
     default: 
       return state
   }

@@ -15,13 +15,11 @@ module.exports = {
     ignored: /node_modules/
   },
   devServer: {
-    port: 8080,
+    port: 9090,
     historyApiFallback: true,
     proxy: {
       '/api/db': {
-        target: 'http://localhost:5050',
-        "secure": false,
-        "changeOrigin": true
+        target: 'http://localhost:5050'
       },
     }
   },
@@ -78,6 +76,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles.css',
     }),
-    new HtmlWebpackPlugin({ filename: `index.html`, template: 'src/views/index.html', favicon: 'src/img/favicon.png'})
+    new HtmlWebpackPlugin({ filename: `index.html`, template: 'src/views/index.html'})
   ]
 }
