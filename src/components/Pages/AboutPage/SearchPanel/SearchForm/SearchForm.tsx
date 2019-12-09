@@ -12,11 +12,15 @@ class SearchForm extends React.Component<IPropSearchFrom> {
   onInputChange = (event) => {
     this.props.productFilter(event.target.value)
   }
+
+  onFormSubmit = (e) => {
+    e.preventDefault()
+  }
   
   render() {
     return (
       <div className="col-lg-4 offset-2">
-        <form action="#" className="shop__search">
+        <form onSubmit={this.onFormSubmit}className="shop__search">
           <label className="shop__search-label">Looking for</label>
           <RegularInput onChange={this.onInputChange} type="text" placeholder="start typing here..." className="shop__search-input"/>
         </form>

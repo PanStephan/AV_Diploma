@@ -57,8 +57,8 @@ const SeparateItem = (props: IPropSeparateItem):JSX.Element => {
                   <div className='seperate-item__description'>
                     {el.description}<span onClick={onClickSpan.bind(this, el.description)}>{description}</span>
                   </div>
+                  <Link className='seperate-item__link' to={`${type}`}> Back </Link>
                 </div>
-                <Link to={`${type}`}> Back </Link>
               </div>
             )
           }
@@ -73,8 +73,8 @@ const SeparateItem = (props: IPropSeparateItem):JSX.Element => {
                 <div>
                   {el.description}
                 </div>
+                <Link className='seperate-item__link' to={`${type}`}> Back </Link>
               </div>
-              <Link to={`${type}`}> Back </Link>
             </div>
           )
         })
