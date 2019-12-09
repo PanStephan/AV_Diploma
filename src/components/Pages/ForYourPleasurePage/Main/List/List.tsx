@@ -22,7 +22,7 @@ class List extends React.Component<IPropList> {
     productListReq()
     ProductListService.getProductList()
     .then(res => productListLoaded(res))
-    // .catch(menuErr) 
+    .catch(err => console.log(err))
   }
 
   render() {

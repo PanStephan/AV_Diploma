@@ -10,7 +10,6 @@ const generateId = () => {
   return `${(~~(Math.random()*1e8)).toString(16)}`;
 }
 
-app.use(express.static(path.join(__dirname, '../../dist')));
 app.use(cors());
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -21,14 +20,7 @@ app.use(async (req, res, next) => {
   next();
 });
 
-app.get('/', (req, res) => {
-  const pathToHtml = path.resolve(__dirname, '../../dist/index.html');
-  const constentFromHtml = fs.readFileSync(pathToHtml, 'utf-8');
-  res.send(constentFromHtml);
-});
-
 app.get('/api/db', (req, res) => {
-  console.log()
   json.bestsellers.map(el => {
     el.id =  generateId()
   })
@@ -51,4 +43,4 @@ app.post('/api/db', rawParser, (req, res) => {
 const port = process.env.PORT || 5050;
 app.listen(port);
 
-console.log('App is listening on port ' + '5050');
+console.log('App is listening on port ' + `${port}`);
