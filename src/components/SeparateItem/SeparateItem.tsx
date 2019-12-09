@@ -3,9 +3,14 @@ import {connect} from 'react-redux'
 import './separateItem.sass'
 import * as imgBeans from '../../logo/Beans_logo_dark.svg'
 import NotFound from '../NotFound/NotFound'
+import {Link} from 'react-router-dom'
 
 interface IPropSeparateItem {
-  productList: Array<any>
+  productList: {
+    coffee: Array<any>,
+    bestsellers: Array<any>,
+    goods: Array<any>
+  }
   itemId: number,
   type?: string
 }
@@ -21,13 +26,13 @@ const SeparateItem = (props: IPropSeparateItem):JSX.Element => {
 
   let item
   switch(type) {
-    case 'coffee' :
+    case '/about/' :
       item = productList.coffee.filter(el => el.id === itemId)
       break
-    case 'main' :
+    case '/' :
       item = productList.bestsellers.filter(el => el.id === itemId)
       break
-    case 'pleasure' :
+    case '/pleasure/' :
       item = productList.goods.filter(el => el.id === itemId)
       break
   }
@@ -39,7 +44,7 @@ const SeparateItem = (props: IPropSeparateItem):JSX.Element => {
     <div>
       {
         item.map(el => {
-          if(el.description.length > 200) {
+          if(el.description && el.description.length > 200) {
             el.description.slice(0, 200)
             return (
               <div className="row seperate-item__wrapper" key={el.id}>
@@ -53,6 +58,7 @@ const SeparateItem = (props: IPropSeparateItem):JSX.Element => {
                     {el.description}<span onClick={onClickSpan.bind(this, el.description)}>{description}</span>
                   </div>
                 </div>
+                <Link to={`${type}`}> Back </Link>
               </div>
             )
           }
@@ -68,6 +74,7 @@ const SeparateItem = (props: IPropSeparateItem):JSX.Element => {
                   {el.description}
                 </div>
               </div>
+              <Link to={`${type}`}> Back </Link>
             </div>
           )
         })

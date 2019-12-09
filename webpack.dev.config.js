@@ -78,6 +78,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles.css',
     }),
-    new HtmlWebpackPlugin({ filename: `index.html`, template: 'src/views/index.html'})
+    new HtmlWebpackPlugin({ filename: `index.html`, template: 'src/views/index.html', favicon: 'src/img/favicon.png'})
   ]
 }

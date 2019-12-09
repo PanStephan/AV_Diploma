@@ -12,7 +12,7 @@ const ForYourPleasurePage = () => (
         <Switch>
           <Route path='/pleasure/:id' exact render = {
             () => { 
-              return <SeparateItem type={'pleasure'}/>
+              return <SeparateItem type={'/pleasure/'}/>
             }
           }/>
           <Route path ='/pleasure/' exact component={Main}/>

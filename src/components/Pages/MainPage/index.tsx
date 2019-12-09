@@ -12,7 +12,7 @@ const MainPage = (): JSX.Element => (
         <Switch>
           <Route path='/:id' exact render = {
             () => { 
-              return <SeparateItem type={'main'}/>
+              return <SeparateItem type={'/'}/>
             }
           }/>
           <Route path ='/' exact component={Main}/>

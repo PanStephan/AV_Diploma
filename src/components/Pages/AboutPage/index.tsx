@@ -12,7 +12,7 @@ const AboutPage = (): JSX.Element => (
         <Switch>
           <Route path='/about/:id' exact render = {
             () => { 
-              return <SeparateItem type={'coffee'}/>
+              return <SeparateItem type={'/about/'}/>
             }
           }/>
           <Route path ='/about/' exact component={Main}/>
