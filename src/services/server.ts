@@ -7,7 +7,7 @@ const app = express()
 const bodyParser = require('body-parser')
 
 const generateId = () => {
-  return `f${(~~(Math.random()*1e8)).toString(16)}`;
+  return `${(~~(Math.random()*1e8)).toString(16)}`;
 }
 
 app.use(express.static(path.join(__dirname, '../../dist')));
@@ -51,4 +51,4 @@ app.post('/api/db', rawParser, (req, res) => {
 const port = process.env.PORT || 5050;
 app.listen(port);
 
-console.log('App is listening on port ' + 'port');
+console.log('App is listening on port ' + '5050');

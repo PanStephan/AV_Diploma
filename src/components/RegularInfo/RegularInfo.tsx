@@ -1,18 +1,18 @@
 import * as React from 'react'
 
-interface IPropRegularHero {
+interface IPropRegularInfo{
   text: string, 
   majorImg: string, 
   icon: string
 }
 
-const RegularHero = (props: IPropRegularHero): JSX.Element => {
+const RegularInfo = (props: IPropRegularInfo): JSX.Element => {
   const{text, majorImg, icon} = props
   return (
     <>
       <div className="row">
         <div className="col-lg-4 offset-2">
-          <img src={majorImg} alt="girl"/>
+          <img src={majorImg}/>
         </div>
         <div className="col-lg-4">
           <div className="title">About our beans</div>
@@ -24,9 +24,8 @@ const RegularHero = (props: IPropRegularHero): JSX.Element => {
       </div>
       <div className="line"></div>
     </> 
-  )
-   
+  ) 
 }
 
 
-export default RegularHero
+export default RegularInfo

@@ -20,13 +20,13 @@ const Navigation = (props:IPropNavigation): JSX.Element =>  {
 			</NavLink>
 		</li>
 		<li className="navigation__item">
-			<NavLink exact to='/about' className={colorClass}>Our coffee</NavLink>
+			<NavLink exact to='/about/' className={colorClass}>Our coffee</NavLink>
 		</li>
 		<li className="navigation__item">
-			<NavLink exact to='/pleasure' className={colorClass}>For your pleasure</NavLink>
+			<NavLink exact to='/pleasure/' className={colorClass}>For your pleasure</NavLink>
 		</li>
 		<li className="navigation__item">
-			<NavLink exact to='/contact' className={colorClass}>Contact Us</NavLink>
+			<NavLink exact to='/contact/' className={colorClass}>Contact Us</NavLink>
 		</li>
 	</>
   )

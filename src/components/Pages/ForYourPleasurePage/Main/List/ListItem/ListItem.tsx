@@ -1,29 +1,48 @@
 import * as React from 'react'
 import './listItem.sass'
+import {getSeparateCoffeeItem} from '../../../../../../actions'
+import {withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
 
 interface IPropListItem {
-  goods: Array<any>
+  goods: Array<any>,
+  history?: any,
+  getSeparateCoffeeItem?(number)
 }
 
-const ListItem = (props: IPropListItem): JSX.Element => {
-  const{goods} = props
-  return (
-    <>
-      {
-        goods.map((el, index) => {
-          return (
-            <div className="pleasure__item" key={index}>
-              <img src={el.url} alt="coffee"/>
-              <div className="pleasure__item-title">
-                {el.name}
+class ListItem extends React.Component<any, IPropListItem> {
+
+  onItemSelected = (id) => {
+    const{getSeparateCoffeeItem} = this.props
+    this.props.history.push(id)
+    getSeparateCoffeeItem(id)
+  }
+
+  render() {
+    const{goods} = this.props
+    return (
+      <>
+        {
+          goods.map((el, index) => {
+            return (
+              <div className="pleasure__item" key={index} onClick={this.onItemSelected.bind(this, el.id)}>
+                <img src={el.url} alt="coffee"/>
+                <div className="pleasure__item-title">
+                  {el.name}
+                </div>
+                <div className="pleasure__item-price">{el.price}</div>
               </div>
-              <div className="pleasure__item-price">{el.price}</div>
-            </div>
-          )
-        })
-      }
-    </>
-  )
+            )
+          })
+        }
+      </>
+    )
+  }
 }
 
-export default ListItem
+const mapDispatchToProps = {
+  getSeparateCoffeeItem
+}
+
+export default connect(null, mapDispatchToProps)(withRouter(ListItem))
+

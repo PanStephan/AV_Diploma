@@ -11,6 +11,13 @@ const productListReq = () => {
   }
 }
 
+const getSeparateCoffeeItem = (id) => {
+  return {
+    type: 'GET_SEPARATE_COFFEE_ITEM',
+    payload: id
+  }
+}
+
 const productFilter = (value) => {
   return {
     type: 'PRODUCT_FILTER',
@@ -21,5 +28,6 @@ const productFilter = (value) => {
 export {
   productListLoaded,
   productListReq,
-  productFilter
+  productFilter,
+  getSeparateCoffeeItem
 }

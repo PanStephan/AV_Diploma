@@ -1,7 +1,7 @@
 import * as React from 'react'
 import './main.sass'
 import List from './List/List'
-import RegularHero from '../../../RegularHero/RegularHero'
+import RegularInfo from '../../../RegularInfo/RegularInfo'
 import * as imgPleasure from '../../../../img/pleasure-page.png'
 import * as imgBeans from '../../../../logo/Beans_logo_dark.svg'
 
@@ -15,7 +15,7 @@ is song that held help face.`
 const Main = (): JSX.Element => (
   <section className="pleasure">
     <div className="container">
-      <RegularHero text={textForHero} icon={imgBeans} majorImg={imgPleasure}/>
+      <RegularInfo text={textForHero} icon={imgBeans} majorImg={imgPleasure}/>
       <List/>
     </div>
   </section>
