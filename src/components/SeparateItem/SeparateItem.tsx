@@ -19,10 +19,13 @@ const SeparateItem = (props: IPropSeparateItem):JSX.Element => {
   switch(type) {
     case 'coffee' :
       item = productList.coffee.filter(el => el.id === itemId)
+      break
     case 'main' :
       item = productList.bestsellers.filter(el => el.id === itemId)
+      break
     case 'pleasure' :
       item = productList.goods.filter(el => el.id === itemId)
+      break
   }
   return (
     <div>
